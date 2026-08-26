@@ -6,18 +6,10 @@
 		"strict": true,
 		"skipLibCheck": true,
 		"lib": ["ESNext"],
-		"paths": {
-			"@/*": ["./src/*"],
-			"@constants/*": ["./src/constants/*"],
-			"@contracts/*": ["./src/contracts/*"],
-			"@schemas/*": ["./src/schemas/*"],
-			"@utils/*": ["./src/utils/*"]
-		},
 		"verbatimModuleSyntax": true,
 		"rootDir": "./src",
 		"outDir": "./dist",
 		"declaration": true
 	},
-	"include": ["./src/**/*.ts", "./src/**/*.d.ts"],
-	"exclude": ["node_modules", "dist", "test", "tests", "**/*.test.ts", "**/*.spec.ts"]
+	"include": ["./src/**/*.ts", "./src/**/*.d.ts"]
 }
