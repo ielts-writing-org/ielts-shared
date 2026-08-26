@@ -12,12 +12,28 @@
 	},
 	"author": "IELTS WRITING ORG",
 	"type": "module",
-	"main": "./dist/index.js",
-	"types": "./dist/index.d.ts",
+	"main": "./dist/_index.js",
+	"types": "./dist/_index.d.ts",
 	"exports": {
 		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.js"
+			"types": "./dist/_index.d.ts",
+			"import": "./dist/_index.js"
+		},
+		"./constants": {
+			"types": "./dist/constants/_index.d.ts",
+			"import": "./dist/constants/_index.js"
+		},
+		"./schemas": {
+			"types": "./dist/schemas/_index.d.ts",
+			"import": "./dist/schemas/_index.js"
+		},
+		"./utils/math": {
+			"types": "./dist/utils/math.d.ts",
+			"import": "./dist/utils/math.js"
+		},
+		"./utils/essay": {
+			"types": "./dist/utils/essay.d.ts",
+			"import": "./dist/utils/essay.js"
 		}
 	},
 	"scripts": {

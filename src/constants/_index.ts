@@ -1,1 +1,1 @@
-export * as essay from './essay.config.js';
+export * from './essay.constants.js';
