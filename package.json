@@ -28,12 +28,12 @@
 			"import": "./dist/schemas/_index.js"
 		},
 		"./utils/math": {
-			"types": "./dist/utils/math.d.ts",
-			"import": "./dist/utils/math.js"
+			"types": "./dist/utils/math.utils.d.ts",
+			"import": "./dist/utils/math.utils.js"
 		},
 		"./utils/essay": {
-			"types": "./dist/utils/essay.d.ts",
-			"import": "./dist/utils/essay.js"
+			"types": "./dist/utils/essay.utils.d.ts",
+			"import": "./dist/utils/essay.utils.js"
 		}
 	},
 	"scripts": {

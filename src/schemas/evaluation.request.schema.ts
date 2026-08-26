@@ -1,4 +1,4 @@
-import { ESSAY_LIMITS } from '../constants/essay.constants.js';
+import { ESSAY_LIMITS } from '../constants/essay.constant.js';
 import { z } from 'zod';
 
 export const task2EvaluationRequestSchema = z.object({

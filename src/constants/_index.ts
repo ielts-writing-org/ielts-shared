@@ -1,1 +1,1 @@
-export * from './essay.constants.js';
+export * from './essay.constant.js';
