@@ -1,5 +1,5 @@
 import { ESSAY_LIMITS } from '../constants/essay.config.js';
-import z from 'zod';
+import { z } from 'zod';
 
 export const task2EvaluationRequestSchema = z.object({
 	topic: z.string().min(1).max(ESSAY_LIMITS.maxTopicChars),

@@ -1,4 +1,4 @@
-import z from 'zod';
+import { z } from 'zod';
 
 const checkSchema = z.object({
 	weight: z.number().min(0).max(1),
