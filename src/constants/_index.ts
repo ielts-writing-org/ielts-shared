@@ -1,0 +1,1 @@
+export * as essay from './essay.config.js';

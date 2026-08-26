@@ -8,6 +8,9 @@
 		"lib": ["ESNext"],
 		"paths": {
 			"@/*": ["./src/*"],
+			"@constants/*": ["./src/constants/*"],
+			"@contracts/*": ["./src/contracts/*"],
+			"@schemas/*": ["./src/schemas/*"],
 			"@utils/*": ["./src/utils/*"]
 		},
 		"verbatimModuleSyntax": true,
