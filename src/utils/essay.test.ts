@@ -1,16 +1,18 @@
 import { describe, expect, test } from 'vitest';
-import { computeDeterministicStats } from './essay.utils';
+import { computeDeterministicStats, type DeterministicStats } from './essay.ts';
 
 describe('ESSAY UTILS TESTS', () => {
 	describe('DETERMINISTIC STATS TESTS', () => {
 		test('empty text', () => {
-			expect(computeDeterministicStats('')).toEqual({
+			const stats = computeDeterministicStats('');
+
+			expect(stats).toEqual({
 				words: 0,
 				sentences: 0,
 				characters: 0,
 				paragraphs: 0,
-				average_sentence_length: 0
-			});
+				averageSentenceLength: 0
+			} satisfies DeterministicStats);
 		});
 
 		test('normal text', () => {
@@ -23,7 +25,7 @@ This is the second paragraph.`;
 			expect.soft(stats.sentences).toBe(3);
 			expect.soft(stats.characters).toBe(65);
 			expect.soft(stats.paragraphs).toBe(2);
-			expect.soft(stats.average_sentence_length).toBeCloseTo(4.6667, 4);
+			expect.soft(stats.averageSentenceLength).toBeCloseTo(4.6667, 4);
 		});
 
 		test('2 newline characters', () => {
@@ -37,7 +39,7 @@ This is the second paragraph.`;
 			expect.soft(stats.sentences).toBe(3);
 			expect.soft(stats.characters).toBe(69);
 			expect.soft(stats.paragraphs).toBe(2);
-			expect.soft(stats.average_sentence_length).toBeCloseTo(4.6667, 4);
+			expect.soft(stats.averageSentenceLength).toBeCloseTo(4.6667, 4);
 		});
 	});
 });

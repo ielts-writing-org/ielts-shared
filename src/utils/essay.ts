@@ -3,7 +3,7 @@ export interface DeterministicStats {
 	sentences: number;
 	characters: number;
 	paragraphs: number;
-	average_sentence_length: number;
+	averageSentenceLength: number;
 }
 
 export function computeDeterministicStats(text: string): DeterministicStats {
@@ -12,7 +12,7 @@ export function computeDeterministicStats(text: string): DeterministicStats {
 		sentences: countSentences(text),
 		characters: countCharacters(text),
 		paragraphs: countParagraphs(text),
-		average_sentence_length: averageSentenceLength(text)
+		averageSentenceLength: averageSentenceLength(text)
 	};
 }
 

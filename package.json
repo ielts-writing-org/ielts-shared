@@ -12,28 +12,22 @@
 	},
 	"author": "IELTS WRITING ORG",
 	"type": "module",
-	"main": "./dist/_index.js",
-	"types": "./dist/_index.d.ts",
 	"exports": {
 		".": {
-			"types": "./dist/_index.d.ts",
-			"import": "./dist/_index.js"
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
 		},
-		"./constants": {
-			"types": "./dist/constants/_index.d.ts",
-			"import": "./dist/constants/_index.js"
+		"./configs": {
+			"types": "./dist/configs/index.d.ts",
+			"import": "./dist/configs/index.js"
 		},
 		"./schemas": {
-			"types": "./dist/schemas/_index.d.ts",
-			"import": "./dist/schemas/_index.js"
+			"types": "./dist/schemas/index.d.ts",
+			"import": "./dist/schemas/index.js"
 		},
-		"./utils/math": {
-			"types": "./dist/utils/math.utils.d.ts",
-			"import": "./dist/utils/math.utils.js"
-		},
-		"./utils/essay": {
-			"types": "./dist/utils/essay.utils.d.ts",
-			"import": "./dist/utils/essay.utils.js"
+		"./utils": {
+			"types": "./dist/utils/index.d.ts",
+			"import": "./dist/utils/index.js"
 		}
 	},
 	"scripts": {
@@ -59,6 +53,6 @@
 		"vitest": "^4.1.11"
 	},
 	"peerDependencies": {
-		"zod": "^4.4.3"
+		"zod": "^4.5.2"
 	}
 }

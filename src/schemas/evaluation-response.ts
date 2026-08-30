@@ -6,15 +6,11 @@ const task2EvaluationCheckSchema = z.object({
 	reason: z.string().max(200)
 });
 
-export type Task2EvaluationCheck = z.infer<typeof task2EvaluationCheckSchema>;
-
 const task2EvaluationEvidenceSchema = z.object({
 	type: z.enum(['strength', 'weakness', 'error', 'task_requirement']),
 	text: z.string(),
 	explanation: z.string()
 });
-
-export type Task2EvaluationEvidence = z.infer<typeof task2EvaluationEvidenceSchema>;
 
 const task2EvaluationProblemSchema = z.object({
 	criterion: z.enum([
@@ -28,8 +24,6 @@ const task2EvaluationProblemSchema = z.object({
 	action: z.string()
 });
 
-export type Task2EvaluationProblem = z.infer<typeof task2EvaluationProblemSchema>;
-
 const task2EvaluationCriterionSchema = z.object({
 	band: z.number().nullable(),
 	completion: z.number().nullable(),
@@ -40,8 +34,6 @@ const task2EvaluationCriterionSchema = z.object({
 	why_this_band: z.string(),
 	why_not_next_band: z.string().nullable()
 });
-
-export type Task2EvaluationCriterion = z.infer<typeof task2EvaluationCriterionSchema>;
 
 export const task2EvaluationResponseSchema = z.object({
 	criteria: z.object({
@@ -58,4 +50,8 @@ export const task2EvaluationResponseSchema = z.object({
 	})
 });
 
+export type Task2EvaluationCheck = z.infer<typeof task2EvaluationCheckSchema>;
+export type Task2EvaluationEvidence = z.infer<typeof task2EvaluationEvidenceSchema>;
+export type Task2EvaluationProblem = z.infer<typeof task2EvaluationProblemSchema>;
+export type Task2EvaluationCriterion = z.infer<typeof task2EvaluationCriterionSchema>;
 export type Task2EvaluationResponse = z.infer<typeof task2EvaluationResponseSchema>;

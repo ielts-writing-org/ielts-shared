@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { roundToHalf } from './math.utils';
+import { roundToHalf } from './math.ts';
 
 describe('MATH UTILS', () => {
 	describe('ROUND TO HALF', () => {
