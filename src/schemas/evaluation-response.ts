@@ -2,18 +2,18 @@ import { z } from 'zod';
 
 // Positive
 const task2EvaluationCheckSchema = z.object({
+	id: z.string(),
 	weight: z.number().min(0).max(1),
 	status: z.enum(['met', 'partially_met', 'not_met', 'not_applicable']),
 	evidence: z.string().max(200),
-	explanation: z.string().max(200)
+	why: z.string().max(200)
 });
 
 // Negative
 const task2EvaluationProblemSchema = z.object({
-	issue: z.string(),
+	what: z.string(),
 	evidence: z.string(),
-	impact: z.string(),
-	action: z.string()
+	how_to: z.string()
 });
 
 const task2EvaluationCriterionSchema = z.object({
