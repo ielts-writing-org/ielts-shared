@@ -1,36 +1,25 @@
 import { z } from 'zod';
 
+// Positive
 const task2EvaluationCheckSchema = z.object({
 	weight: z.number().min(0).max(1),
 	status: z.enum(['met', 'partially_met', 'not_met', 'not_applicable']),
-	reason: z.string().max(200)
+	evidence: z.string().max(200),
+	explanation: z.string().max(200)
 });
 
-const task2EvaluationEvidenceSchema = z.object({
-	type: z.enum(['strength', 'weakness', 'error', 'task_requirement']),
-	text: z.string(),
-	explanation: z.string()
-});
-
+// Negative
 const task2EvaluationProblemSchema = z.object({
-	criterion: z.enum([
-		'task_response',
-		'coherence_and_cohesion',
-		'lexical_resource',
-		'grammatical_range_and_accuracy'
-	]),
 	issue: z.string(),
+	evidence: z.string(),
 	impact: z.string(),
 	action: z.string()
 });
 
 const task2EvaluationCriterionSchema = z.object({
 	band: z.number().nullable(),
-	completion: z.number().nullable(),
 	checks: z.array(task2EvaluationCheckSchema),
-	evidence: z.array(task2EvaluationEvidenceSchema).max(5),
-	strengths: z.array(z.string()).max(5),
-	limitations: z.array(z.string()).max(5),
+	problems: z.array(task2EvaluationProblemSchema),
 	why_this_band: z.string(),
 	why_not_next_band: z.string().nullable()
 });
@@ -42,16 +31,10 @@ export const task2EvaluationResponseSchema = z.object({
 		lexical_resource: task2EvaluationCriterionSchema,
 		grammatical_range_and_accuracy: task2EvaluationCriterionSchema
 	}),
-	overall_band: z.number().nullable(),
-	feedback: z.object({
-		strongest_areas: z.array(z.string()).max(3),
-		highest_impact_problems: z.array(task2EvaluationProblemSchema).max(3),
-		next_step: z.string()
-	})
+	overall_band: z.number().nullable()
 });
 
 export type Task2EvaluationCheck = z.infer<typeof task2EvaluationCheckSchema>;
-export type Task2EvaluationEvidence = z.infer<typeof task2EvaluationEvidenceSchema>;
 export type Task2EvaluationProblem = z.infer<typeof task2EvaluationProblemSchema>;
 export type Task2EvaluationCriterion = z.infer<typeof task2EvaluationCriterionSchema>;
 export type Task2EvaluationResponse = z.infer<typeof task2EvaluationResponseSchema>;
